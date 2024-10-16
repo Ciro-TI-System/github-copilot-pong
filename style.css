@@ -1,0 +1,164 @@
+/* =======================
+   RESET E AJUSTES BÁSICOS
+   ======================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Tamanho base de 16px */
+  line-height: 1.5;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+/* =======================
+      ACESSIBILIDADE
+      ======================= */
+
+/* Melhoria da acessibilidade ao foco */
+a,
+button {
+  outline: none;
+}
+
+a:focus,
+button:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+.canvas__game {
+  outline: none;
+  display: none;
+}
+
+canvas {
+  display: block;
+  border: 2px solid #333;
+  outline: none; /* Retira o outline padrão */
+  max-width: 100%; /* Responsividade */
+  height: auto;
+  background-color: #000;
+}
+
+/* =======================
+      MOBILE FIRST (ATÉ 780px)
+      ======================= */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Fonte padrão para mobile */
+.main__title {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #005fcc;
+}
+
+/* =======================
+      BREAKPOINT - ATÉ 780px
+      ======================= */
+@media (min-width: 780px) {
+  html {
+    font-size: 18px;
+  }
+
+  .main {
+    padding: 2rem;
+  }
+
+  .main__title {
+    font-size: 2rem;
+  }
+
+  canvas {
+    border: 4px solid #333;
+  }
+}
+
+/* =======================
+      BREAKPOINT - ATÉ 1080px
+      ======================= */
+@media (min-width: 1080px) {
+  html {
+    font-size: 20px;
+  }
+
+  .main {
+    padding: 3rem;
+  }
+
+  .main__title {
+    font-size: 2.5rem;
+  }
+
+  canvas {
+    border: 6px solid #333;
+  }
+}
+
+/* =======================
+      UTILIDADES BEM ESTRUTURADAS
+      ======================= */
+
+/* BEM para estrutura de título */
+.main__title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Para melhorar acessibilidade de leitura */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+p {
+  margin-bottom: 3rem;
+}
+
+/* Estilos da tecla */
+kbd {
+  font-weight: bold; /* Texto em negrito */
+  color: #ffffff; /* Cor do texto */
+  background-color: #007bff; /* Cor de fundo */
+  padding: 4px 8px; /* Espaçamento interno */
+  border-radius: 4px; /* Bordas arredondadas */
+  font-family: monospace; /* Fonte monoespaçada */
+}
